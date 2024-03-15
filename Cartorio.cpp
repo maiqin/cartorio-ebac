@@ -19,8 +19,8 @@ int registro() // Função responsavel por cadastrar os usuários no sistema
 	strcpy(arquivo, cpf); //responsavel por copiar os valores da string
 	
 	FILE *file; //cria o arquivo
-	file = fopen(arquivo, "w"); //cria o arquivo
-	fprintf(file,cpf); //salvo o valor da variavell
+	file = fopen(arquivo, "w"); //cria o arquivo e o "w" significa "escrever"
+	fprintf(file,cpf); //salvo o valor da variável
 	fclose(file); //fecha o arquivo
 	
 	file = fopen(arquivo, "a");
@@ -129,6 +129,7 @@ int main()
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n\n"); 
+		printf("\t4 - Sair do sistema\n\n");
 		printf("Opção: "); //Fim do menu
 		
 		scanf("%d", &opcao); //Armaznandoo a escolha do usuário
@@ -148,6 +149,11 @@ int main()
 			
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigado por usar o sistema!");
+			return 0;
 			break;
 			
 			default:
